@@ -1,6 +1,8 @@
 # Тестовое задание на позицию React Developer в компанию Core Line
 
-[Демо](https://lalexd.github.io/test_core_line)
+## Запуск
+
+`npm start`
 
 ## Выполнил
 
