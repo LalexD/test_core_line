@@ -23,6 +23,8 @@
 }
 
 .pageContent {
-  flex: 1;
   width: 100%;
+  height: calc(100% - var(--size-header-height) - var(--size-footer-height));
+  margin-top: var(--size-header-height); 
+  overflow-y: auto;
 }

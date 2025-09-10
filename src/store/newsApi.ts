@@ -1,8 +1,8 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 import { TNews } from "../types/types";
 
-
 const API_KEY = "r8iTRivGzOARLM07W73DX6juIVhAmwIs";
+const imageBaseUrl = "https://www.nytimes.com/";
 
 export const newsApi = createApi({
   reducerPath: "newsApi",
@@ -21,7 +21,9 @@ export const newsApi = createApi({
         return response.response.docs.map((doc) => ({
           abstract: doc.abstract || "",
           web_url: doc.web_url || "",
-          multimedia: (doc.multimedia || []).map((m: any) => m.url),
+          multimedia: (doc.multimedia || []).map(
+            (m: any) => imageBaseUrl + m.url
+          ),
           pub_date: doc.pub_date || "",
           source: doc.source || "",
         }));

@@ -1,4 +1,5 @@
 import { TNews } from "../../types/types";
+import { formatDateAndTime } from "../../utils/date";
 import styles from "./NewsCard.module.css";
 
 interface IProps {
@@ -7,19 +8,29 @@ interface IProps {
 
 const NewsCard = ({ item }: IProps) => {
   return (
-    <article className={styles.card}>
-      <img
-        //src={item.multimedia[0]}
-        src={""}
-        alt="Preview news"
-        className={styles.cardImage}
-      />
-      <div className={styles.cardInfoContainer}>
-        <h2 className={styles.cardInfoTitle}>{item.abstract}</h2>
-        <p className={styles.cardInfoText}>{item.abstract}</p>
-        <time className={styles.cardInfoDate}>{item.pub_date}</time>
-      </div>
-    </article>
+    <a
+      href={item.web_url}
+      target="_blank"
+      rel="noopener noreferrer"
+      className={styles.cardLink}
+    >
+      <article className={styles.card}>
+        <div className={styles.cardImageWrapper}>
+          <img
+            src={item.multimedia[0] || "/images/empty_img.png"}
+            alt={item.abstract}
+            className={styles.cardImage}
+          />
+        </div>
+        <div className={styles.cardInfoContainer}>
+          <h2 className={styles.cardInfoTitle}>{item.source}</h2>
+          <p className={styles.cardInfoText}>{item.abstract}</p>
+          <time className={styles.cardInfoDate}>
+            {formatDateAndTime(item.pub_date)}
+          </time>
+        </div>
+      </article>
+    </a>
   );
 };
 

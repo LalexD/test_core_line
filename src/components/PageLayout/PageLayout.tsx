@@ -12,10 +12,8 @@ const PageLayout = ({ children }: IProps) => {
     <div className={styles.pageContainerWrapper}>
       <div className={styles.pageContainer}>
         <Header title="BESIDER" />
-        <div className={styles.pageContentWrapper}>
-          <div className={styles.pageContent}>{children}</div>
-          <Footer />
-        </div>
+        <div className={styles.pageContent}>{children}</div>
+        <Footer />
       </div>
     </div>
   );
