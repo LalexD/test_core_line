@@ -2,12 +2,17 @@ import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 import { TNews } from "../types/types";
 
 const API_KEY = "r8iTRivGzOARLM07W73DX6juIVhAmwIs";
-const imageBaseUrl = "https://www.nytimes.com/";
+const imageBaseUrl = "https://nytimes.com/";
+const API_BASE =
+  process.env.NODE_ENV === "development"
+    ? "/svc/archive/v1"
+    : "https://api.nytimes.com/svc/archive/v1";
+
 
 export const newsApi = createApi({
   reducerPath: "newsApi",
   baseQuery: fetchBaseQuery({
-    baseUrl: "/svc/archive/v1",
+    baseUrl: API_BASE,
   }),
   endpoints: (builder) => ({
     getNews: builder.query<TNews[], { year: number; month: number }>({

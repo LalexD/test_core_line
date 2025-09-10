@@ -17,7 +17,10 @@ const NewsCard = ({ item }: IProps) => {
       <article className={styles.card}>
         <div className={styles.cardImageWrapper}>
           <img
-            src={item.multimedia[0] || "/images/empty_img.png"}
+            src={
+              item.multimedia[0] ||
+              `${process.env.PUBLIC_URL}/images/empty_img.png`
+            }
             alt={item.abstract}
             className={styles.cardImage}
           />

@@ -19,7 +19,10 @@ const Footer = () => {
       </div>
       <div className={styles.powered_container}>
         <span>Powered by</span>
-        <img src="/images/news_api.png" alt="News API logo" />
+        <img
+          src={`${process.env.PUBLIC_URL}/images/news_api.png`}
+          alt="News API logo"
+        />
       </div>
       <span>© 2023 Besider. Inspired by Insider</span>
     </footer>
