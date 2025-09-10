@@ -1,0 +1,68 @@
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  z-index: 100;
+  padding-inline: 20px;
+  height: var(--size-header-height);
+  width: 100%;
+  max-width: var(--size-page-width);
+  border-bottom: 1px solid var(--color-gray-light);
+  background-color: var(--color-bg);
+}
+
+.headerMenuButton {
+  position: absolute;
+  left: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  aspect-ratio: 1;
+  height: 40px;
+}
+
+.headerMenuButton:hover {
+  color: var(--color-brand);
+}
+
+.headerTittle {
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.menuListWrapper {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.menuList {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  margin: 0;
+  padding: 0;
+}
+
+.menuList li {
+  list-style-type: none;
+}
+
+.menuList li a {
+  font-size: 22px;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.menuList li a:hover {
+  color: var(--color-brand);
+}
+
+@media (min-width: 768px) {
+  .menuListWrapper {
+    padding-top: 60px;
+    height: auto;
+  }
+}
